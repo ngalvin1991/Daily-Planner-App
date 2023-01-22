@@ -23,17 +23,18 @@
 //will be used in a fucntion to generate the different times. 
 var timeBlockLi = document.getElementById("timeBlockLi");
 //this will be used for the current day function. 
-var currentDay = document.getElementById("currentDay");
+var currentDayShow = document.getElementById("currentDay");
 //will show the different times at the side of each calendar row.
 var timeBlockInput = ["08:00am", "09:00am", "10:00am", "11:00am", "12:00pm", "13:00pm", "14:00pm",
 "15:00pm", "16:00pm", "17:00pm", "18:00pm"];
 
 
 function CurrentDateTime () {
-    var currentDT = momenent().format('MMMM do YYYY, h:mm:ss a');
-    currentDay.innerHTML = currentDT;
-    currentDay.innerHTML = "Today's Date: " + currentDT;
-}
+    var currentDT = moment().format('MMMM Do YYYY, h:mm:ss a');
+    currentDayShow.innerHTML = currentDT;
+    currentDayShow.innerHTML = "Today's Date: " + currentDT;
+} 
+setInterval(CurrentDateTime, 1000);
 
 
 //this function gets all of the times stated in the timeBlockInput array above and 
@@ -51,19 +52,26 @@ function getTimeBlock () {
 
         var hours = document.createElement("div");
         hours.innerHTML = listHours;
-        hours.classList.add("hours");
+        hours.classList.add("hour");
         hoursRow.appendChild(hours);
 
-        var textInput = document.createElement("textInput");
-        textInput.placeholder = "Enter Your Tasks Here!";
+        var textInput = document.createElement("textarea");
+        textInput.placeholder = "Enter Your Task Here!";
         textInput.setAttribute("class", "description");
         textInput.setAttribute("id", i);
         hoursRow.appendChild(textInput);
 
         var saveTask = document.createElement("button");
         saveTask.textContent = "Save Task";
-        saveTask.classList.add("saveTask");
+        saveTask.classList.add("saveBtn");
         saveTask.setAttribute("value", i);
         hoursRow.appendChild(saveTask);
     }
 }
+
+// the function below will allow the user to save their tasks. 
+$(document).on('click', 'saveTask', function () {
+    var saveUserTask  = $(this).val();
+    var userDescription = document.getElementById(saveUserTask).value;
+    localStorage.setItem(saveUserTask, userDescription);
+});
