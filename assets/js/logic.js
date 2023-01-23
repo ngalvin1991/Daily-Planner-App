@@ -70,8 +70,11 @@ function getTimeBlock () {
 }
 
 // the function below will allow the user to save their tasks. 
-$(document).on('click', 'saveTask', function () {
+    $(document).on('click', '.saveTask', function () {
     var saveUserTask  = $(this).val();
     var userDescription = document.getElementById(saveUserTask).value;
     localStorage.setItem(saveUserTask, userDescription);
 });
+
+//This function will update the color of the time blocks whether they are in the past, present or future: 
+
