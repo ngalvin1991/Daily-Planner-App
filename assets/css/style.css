@@ -67,13 +67,6 @@ textarea {
   color: purple;
 }
 
-.clearBtn {
-  border-left: 1px solid black;
-  border-radius: 15px;
-  background-color: black;
-  color: white;
-}
-
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
