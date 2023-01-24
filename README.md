@@ -17,10 +17,15 @@ SO THAT I can manage my time effectively
 ## Description
 
 This Daily Planner App is a browser run application allowing the user to log their daily task. 
+
 The planner runs from 8:00am until 18:00 (or working day) and the user can input their task into each time frame.
+
 The current date/day and time is shown within the Jumbotron at the top of the page.
 The use of DOM manipulation, advanced JavaScript, integration of third-party APIs was used to create this application.
-When the user saves the task with the appropriate button the task is saved to local storage. When the page is reloaded the tasks will automatically come back on to the page.
+
+When the user saves the task with the appropriate button the task is saved to local storage. 
+
+When the page is reloaded the tasks will automatically come back on to the page.
 
 ## Installation 
 The application will run on any web browser using the link above. 
