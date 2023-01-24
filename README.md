@@ -3,6 +3,9 @@
 Here is the deployed website link: 
 https://ngalvin1991.github.io/Daily-Planner-App/
 
+Here is the link to the Github Repository:
+https://github.com/ngalvin1991/Daily-Planner-App
+
 ## User Story 
 
 AS AN employee with a busy schedule
