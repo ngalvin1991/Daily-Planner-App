@@ -62,15 +62,16 @@ function getTimeBlock() {
         hoursRow.appendChild(textInput);
 
         var saveTask = document.createElement("button");
-        saveTask.textContent = "Save Task";
+        saveTask.textContent = "Save";
         saveTask.classList.add("saveBtn");
         saveTask.setAttribute("value", i);
         hoursRow.appendChild(saveTask);
     }
 }
 
+
 // the function below will allow the user to save their tasks. 
-$(document).on('click', '.saveTask', function () {
+$(document).on('click', '.saveBtn', function () {
     var saveUserTask = $(this).val();
     var userDescription = document.getElementById(saveUserTask).value;
     localStorage.setItem(saveUserTask, userDescription);
@@ -102,21 +103,13 @@ function colorTimeBlocks () {
 colorTimeBlocks()
 setInterval(colorTimeBlocks, 10000);
 
-
-
-//This will allow the user to clear all of the text areas. 
-// function clearAll() {
-//     var clearConfirm = confirm("Do you really want to delete all of your tasks?");
-//     var setTask = document.getElementsByClassName('description');
-
-//     if (clearConfirm === true) {
-//         for (var i = 0; i < setTask.length; i++) {
-//             localStorage.removeItem(i);
-//         }
-//         setTask.innerText = "";
-//         getTimeBlock();
-//         colorTimeBlocks();
-
-//     }
-// }
+//This function gets the stored notes and adds them back to the page when loaded.
+function grabStoredNotes () {
+    for (var i = 0; i < timeBlockInput.length; i++) {
+        var getStoredNotes = localStorage.getItem(i);
+        var textArea = document.getElementById(i);
+        textArea.innerText = getStoredNotes;
+    }
+}
+grabStoredNotes();
 

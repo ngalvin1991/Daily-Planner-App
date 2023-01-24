@@ -53,18 +53,25 @@ textarea {
 }
 
 .past {
-  background-color: white;
+  background-color: whitesmoke;
   color: purple;
 }
 
 .present {
-  background-color: green;
+  background-color: lightskyblue;
   color: purple;
 }
 
 .future {
   background-color: yellow;
   color: purple;
+}
+
+.clearBtn {
+  border-left: 1px solid black;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
 }
 
 .saveBtn {
